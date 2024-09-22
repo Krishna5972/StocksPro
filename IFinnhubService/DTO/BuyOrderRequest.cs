@@ -32,6 +32,7 @@ namespace ServiceContracts.DTO
                 StockSymbol = StockSymbol,
                 StockName = StockName,
                 DateAndTimeOfOrder = DateAndTimeOfOrder,
+                Quantity = Quantity,
                 Price = Price
 
             };

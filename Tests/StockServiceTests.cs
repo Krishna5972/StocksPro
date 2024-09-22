@@ -366,8 +366,10 @@ namespace Tests
         {
             // Act
             var buyOrderResponseList = _stocksService.GetAllBuyOrders();
+
+            int expected = 0;
             // Assert
-            Assert.Null(buyOrderResponseList);
+            Assert.Equal(buyOrderResponseList.Count, expected);
         }
         [Fact]
         public void GetAllBuyOrders_ShouldHaveAllBuyOrders()
@@ -420,8 +422,10 @@ namespace Tests
         {
             // Act
             var sellOrderResponseList = _stocksService.GetAllSellOrders();
+
+            int expected = 0;
             // Assert
-            Assert.Null(sellOrderResponseList);
+            Assert.Equal(sellOrderResponseList.Count, expected);
         }
         [Fact]
         public void GetAllSellOrders_ShouldHaveAllSellOrders()
