@@ -47,28 +47,18 @@ namespace Services
         public List<BuyOrderResponse> GetAllBuyOrders()
         {
 
-            if (_buyOrdersList.Count == 0) return null;
 
-            List<BuyOrderResponse> buyOrderResponseList = new List<BuyOrderResponse>();
-
-            foreach(var buyOrder in _buyOrdersList)
-            {
-                buyOrderResponseList.Add(buyOrder.ToBuyOrderResponse());
-            }
-            return buyOrderResponseList;
+            return _buyOrdersList.OrderByDescending(x=>x.DateAndTimeOfOrder)
+                                 .Select(y=>y.ToBuyOrderResponse())
+                                 .ToList();
         }
 
         public List<SellOrderResponse> GetAllSellOrders()
         {
-            if (_sellOrdersList.Count == 0) return null;
 
-            List<SellOrderResponse> sellOrderResponseList = new List<SellOrderResponse>();
-
-            foreach(var sellOrder in _sellOrdersList)
-            {
-                sellOrderResponseList.Add(sellOrder.TosellOrderResponse());
-            }
-            return sellOrderResponseList;
+            return _sellOrdersList.OrderByDescending(x => x.DateAndTimeOfOrder)
+                                 .Select(y => y.TosellOrderResponse())
+                                 .ToList();
         }
 
 
