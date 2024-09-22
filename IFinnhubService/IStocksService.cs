@@ -9,12 +9,12 @@ namespace ServiceContracts
 {
     public interface IStocksService
     {
-        Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest);
+        BuyOrderResponse CreateBuyOrder(BuyOrderRequest? buyOrderRequest);
 
-        Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest);
+        SellOrderResponse CreateSellOrder(SellOrderRequest? sellOrderRequest);
 
-        Task<List<BuyOrderResponse>> GetBuyOrders();
+        List<BuyOrderResponse> GetAllBuyOrders();
 
-        Task<List<SellOrderResponse>> GetSellOrders();
+        List<SellOrderResponse> GetAllSellOrders();
     }
 }
