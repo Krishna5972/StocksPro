@@ -9,7 +9,7 @@ using Entities;
 
 namespace ServiceContracts.DTO
 {
-    public class BuyOrderResponse
+    public class BuyOrderResponse : IOrderResponse
     {
 
         public Guid BuyOrderID { get; set; }
@@ -17,11 +17,12 @@ namespace ServiceContracts.DTO
         public string StockName { get; set; }
 
         public DateTime DateAndTimeOfOrder { get; set; }
+
+        public OrderType OrderType { get; set; } = OrderType.Buy;
         public uint Quantity { get; set; }
         public double Price { get; set; }
 
         public double TradeAmount { get; set; }
-
 
         public override bool Equals(object? obj)
         {
