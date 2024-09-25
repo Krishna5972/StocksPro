@@ -40,7 +40,7 @@ namespace StocksPro.Controllers
             return View(stockTrade);
         }
 
-        [Route("/Trade/Buy")]
+        [Route("/Trade/BuyOrder")]
         public async Task<IActionResult> BuyOrder(BuyOrderRequest buyOrderRequest)
         {
             buyOrderRequest.DateAndTimeOfOrder = DateTime.Now;
@@ -67,7 +67,7 @@ namespace StocksPro.Controllers
             return RedirectToAction("Orders");
         }
 
-        [Route("/Trade/Sell")]
+        [Route("/Trade/SellOrder")]
         public async Task<IActionResult> SellOrder(SellOrderRequest sellOrderRequest)
         {
             sellOrderRequest.DateAndTimeOfOrder = DateTime.Now;
